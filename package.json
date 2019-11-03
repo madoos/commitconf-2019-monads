@@ -1,0 +1,12 @@
+{
+  "devDependencies": {
+    "reveal-md": "^2.4.1",
+    "watch": "^1.0.2",
+    "ramda": "^0.26.1"
+  },
+  "scripts": {
+    "slides:build": "node slides.js",
+    "slides:dev": "npm run slides:build & npm run slides:start & watch 'npm run slides:build' slides",
+    "slides:start": "reveal-md -w --theme moon slides.md"
+  }
+}
