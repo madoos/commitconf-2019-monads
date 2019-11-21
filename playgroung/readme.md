@@ -4,6 +4,7 @@ Esquema:
   ===========================================================================================================
   >Las promesas nos permiten trabajar con funciones de primer orden que se pasan como argumentos a través de su método
   >then y que se aplicarán sobre los datos recibidos por la promesa de forma asíncrona.
+
   >La pf se centra en la utilización y composición de funciones puras para obtener una aplicación final
   >Vamos a ver algunos ejemplos de cómo se pueden utilizar las funciones como entes de primer orden
   >a través del método then de las promesas que luego nos permitirán ver las analogías tanto con **funtores**
@@ -13,7 +14,7 @@ Esquema:
 
  -Funtores: 
  ===========================================================================================================
- >De manera similar, un funtore es un __contenedor de contextos__ que nos va a permitor trabajar con funciones puras y de primer orden
+ >De manera similar, un funtor es un __contenedor de contextos__ que nos va a permitir trabajar con funciones puras y de primer orden
  >aportando las siguientes ventajas:
 
     *Funciones universales (reutilización).
@@ -21,10 +22,10 @@ Esquema:
 
   Ej -> implementación de un funtor Identidad -> 2.funtorId.js
 
-  >Para que nos sean realmente útiles de cara a la composición y reutilizaión de nuestras funciones, necesitaremos que dichos funtores cumplan
+  >Para que nos sean realmente útiles de cara a la composición y reutilización de nuestras funciones, necesitaremos que dichos funtores cumplan
   >con una serie de reglas: la composición y la identidad
 
-  Ej -> 2.reglas.js
+  Ej -> 2.funtorId.js
 
   -Diferencias funtor-promesas:
   ===========================================================================================================
@@ -35,7 +36,7 @@ Esquema:
       *Las promesas son ansiosas
       *Las promesas aplanan
 
-  Ej -> 3.diferencias.js
+  Ej -> 3.diff.js
 
   -Reto:
 
@@ -43,6 +44,6 @@ Esquema:
 
   https://codepen.io/madoos/pens/public?grid_type=list
 
-  1. El primer reto cocnsiste nada más que en la implementación de un funtor id como el que hemos visto previamente y que comprobeis que cumple las reglas adecuadas para la composición y reutilización de funciones, a saber: composición e identidad
-  2. Un poco más complejo: os pedimos que implementeis y utiliceis un funtor Future. Este tipo de funtores, son similares a las promesas solo que con los valores cambiados. Son estructuras, como veis, cuya propiedad fork es una función que recive dos parámetros, dos funciones, la primera que rej y la segunda res (al contrario que las promesas). En este caso el método map ha de devolver una estructura también de tipo future, que cuando reject el dato, contenga la misma función de rej, pero cuyo resolve sea el resolve de la función aplicada sobre el dato.
+  1. El primer reto consiste nada más que en la implementación de un funtor id como el que hemos visto previamente y que comprobeis que cumple las reglas adecuadas para la composición y reutilización de funciones, a saber: composición e identidad
+  2. Un poco más complejo: os pedimos que utiliceis un funtor Future. Este tipo de funtores, son similares a las promesas solo que con los valores cambiados. Son estructuras, como veis, cuya propiedad fork es una función que recive dos parámetros, dos funciones, la primera que rej y la segunda res (al contrario que las promesas). En este caso el método map ha de devolver una estructura también de tipo future, que cuando reject el dato, contenga la misma función de rej, pero cuyo resolve sea el resolve de la función aplicada sobre el dato.
 
